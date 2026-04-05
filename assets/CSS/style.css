@@ -1230,3 +1230,298 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
 
   transform: translateY(0);
 }
+
+/*===== RESPONSIVO (DESKTOP) ====================================*/
+
+/* ===== DESKTOP (1024px+) ===== */
+@media (min-width: 1024px) {
+  body {
+    overflow: auto;
+  }
+  .wrapper {
+    width: min(112rem, 100%);
+    display: grid;
+  }
+  section {
+    padding-block: 13rem;
+  }
+  body section h2 {
+    font-size: 4rem;
+    line-height: 5.2rem;
+  }
+  .col-a {
+    grid-area: A;
+  }
+  .col-b {
+    grid-area: B;
+  }
+
+  nav#navigation .wrapper *  {
+    margin: 0;
+    padding: 0;
+    visibility: initial;
+    display: initial;
+    opacity: initial;
+    flex-direction: initial;
+    position: initial;
+    font-size: initial;
+    transform: initial;
+    color: var(--warning-color);
+    background-color: initial;
+    font-weight: initial;
+    filter: initial;
+  }
+
+  nav#navigation a.logoclose,
+  footer a.logoclose {
+    font-size: 4rem;
+    color: var(--white);
+  }
+  nav#navigation .close-menu,
+  nav#navigation .open-menu {
+    display: none;
+  }
+
+  nav#navigation .menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+  }
+  nav#navigation .menu ul:nth-child(1) {
+    display: flex;
+    gap: 2rem;
+  }
+  nav#navigation .menu ul li a {
+    color: var(--white);
+    opacity: 0.7;
+    transition: opacity 0.4s;
+
+    font-size: 1.8rem;
+  }
+  
+  body.light-mode nav#navigation .menu ul li a {
+    color: var(--black);
+  }
+  nav#navigation.scroll .menu ul li a {
+    color: var(--white);
+    opacity: 0.6;
+  }
+  nav#navigation .menu ul:nth-child(1) li {
+    width: auto;
+    color: var(--action-color);
+  }
+  nav#navigation .menu ul:nth-child(1) li:nth-child(3),
+  nav#navigation .menu ul:nth-child(1) li:nth-child(4) {
+    width: auto;
+  }
+
+  nav#navigation .menu ul li a.active,
+  nav#navigation .menu ul li a:hover {
+    opacity: 1;
+    font-weight: 700;
+  }
+  nav#navigation.scroll .menu ul li a.active,
+  nav#navigation.scroll .menu ul li a:hover {
+    opacity: 1;
+  }
+
+  nav#navigation .menu ul:nth-child(1) li a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--primary-color);
+    display: block;
+    position: relative;
+    bottom: -2rem;
+    left: -0.5rem;
+    transition: width 0.2s;
+  }
+  nav#navigation.scroll .menu ul li a::after {
+    background-color: var(--paragraph-2);
+  }
+  nav#navigation .menu ul li a:hover::after,
+  nav#navigation .menu ul li a.active::after {
+    padding-inline: 0.8rem;
+    width: 100%;
+  }
+
+  nav#navigation.scroll .menu a.button:hover,
+  nav#navigation.scroll .menu a.button.active {
+    background-color: var(--primary-color);
+    filter: brightness(1.3);
+    border: none;
+  }
+
+  nav#navigation .social-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+  nav#navigation .social-links li:nth-child(1) svg path {
+    stroke: var(--nav-social);
+  }
+  nav#navigation .social-links li:nth-child(2) svg path:nth-child(2),
+  nav#navigation .social-links li:nth-child(3) svg path:nth-child(2),
+  nav#navigation .social-links li:nth-child(4) svg path:nth-child(2) {
+    fill: var(--nav-social);
+  }
+  nav#navigation.scroll .social-links li:nth-child(1) svg path {
+    stroke: var(--nav-social);
+  }
+  nav#navigation.scroll .social-links li:nth-child(2) svg path:nth-child(2),
+  nav#navigation.scroll .social-links li:nth-child(3) svg path:nth-child(2),
+  nav#navigation.scroll .social-links li:nth-child(4) svg path:nth-child(2) {
+    fill: var(--nav-social);
+  }
+
+  nav#navigation .social-links svg {
+    margin-top: 0.3rem;
+    transition: 300ms;
+  }
+  nav#navigation .social-links svg:hover {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+  }
+  nav#navigation .social-links li svg path {
+    transition: 200ms;
+  }
+  nav#navigation.scroll .social-links li:nth-child(1) svg:hover path {
+    stroke: #ff377a;
+  }
+  nav#navigation.scroll
+    .social-links
+    li:nth-child(2)
+    svg:hover
+    path:nth-child(2) {
+    fill: #fff;
+  }
+  nav#navigation.scroll
+    .social-links
+    li:nth-child(3)
+    svg:hover
+    path:nth-child(2) {
+    fill: #0a66c2;
+  }
+  nav#navigation.scroll
+    .social-links
+    li:nth-child(4)
+    svg:hover
+    path:nth-child(2) {
+    fill: #00abf0;
+  }
+
+  #home {
+    padding-top: var(--nav-height);
+  }
+  #home .wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: "A B";
+  }
+  #home .col-a {
+    text-align: left;
+    align-self: center;
+  }
+  #home h1 {
+    font-size: 6rem;
+  }
+  #home .content p {
+    font-size: 2.5rem;
+  }
+  #home .button {
+    margin: 0;
+  }
+  #home .wrapper::before {
+    width: 40rem;
+    height: 40rem;
+    right: 3rem;
+    bottom: 7rem;
+  }
+  #home img {
+    width: 42rem;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 38rem;
+    }
+  }
+
+  #about .wrapper {
+    grid-template-columns: 48rem 1fr;
+    grid-template-areas: "B A";
+    gap: 6.7rem;
+  }
+  #about .col-a {
+    align-self: center;
+  }
+  #about .col-b {
+    text-align: center;
+  }
+  #about img:hover {
+    scale: 1.07;
+  }
+
+  #projects {
+    background-color: var(--bg-color);
+  }
+  #projects h2,
+  #knowledge h2 {
+    width: 49.7rem;
+    margin-inline: auto;
+  }
+  #projects .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+  }
+  #projects h3 {
+    height: 5rem;
+  }
+
+  #knowledge .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+  #knowledge .card {
+    width: 30%;
+    flex-grow: 1;
+  }
+
+  #contact .wrapper {
+    grid-template-columns: 1fr 57.5rem;
+    grid-template-areas: "A B";
+  }
+  #contact .col-a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+  #contact .col-a .content {
+    align-items: flex-start;
+  }
+  #contact .col-b {
+    text-align: center;
+  }
+
+  footer .wrapper {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "A B";
+  }
+  footer .col-a,
+  footer .col-b {
+    align-self: center;
+  }
+  footer p {
+    margin-bottom: 0;
+  }
+  footer .social-links {
+    justify-content: flex-end;
+  }
+}
