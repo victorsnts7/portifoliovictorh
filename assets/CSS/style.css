@@ -1003,3 +1003,106 @@ body.light-mode #knowledge .card {
 #knowledge .card img {
   width: 10rem;
 }
+
+/*===== CONTACT ===============================================*/
+
+#contact {
+  text-align: left;
+  background-color: var(--bg-color);
+}
+
+#contact .col-a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 2rem;
+}
+
+#contact .col-a .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact header {
+  margin-bottom: 3.2rem;
+}
+
+#contact ul {
+  margin-bottom: 2rem;
+}
+
+#contact ul a,
+#about .content a:nth-child(2) {
+  width: fit-content;
+
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem;
+  border-radius: 0.8rem;
+
+  transition: 300ms;
+}
+
+#contact ul a {
+  color: var(--paragraph);
+}
+
+#contact ul a:hover {
+  background: var(--third-color);
+}
+
+#contact a path {
+  transition: 400ms;
+}
+
+#contact a.button path {
+  fill: var(--warning-color);
+}
+
+#contact a.button:hover path {
+  fill: rgb(64, 255, 0);
+}
+
+#contact ul li:nth-child(2) a img {
+  rotate: -15deg;
+}
+
+#contact ul li:nth-child(2) a path {
+  stroke: none;
+}
+
+#contact .col-b {
+  height: 38rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#contact .col-b img {
+  width: 13rem;
+  animation: flutuar 2.5s infinite backwards;
+  filter: brightness(1.2);
+}
+
+#contact .col-b::after {
+  content: "";
+  display: block;
+
+  width: 13rem;
+  height: 5rem;
+
+  background-color: black;
+  border-radius: 100%;
+}
+
+body.light-mode #contact .col-b::after {
+  background-color: grey;
+}
