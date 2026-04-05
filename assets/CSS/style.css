@@ -788,3 +788,170 @@ body.light-mode #about .text-about {
 
   transition: 600ms;
 }
+
+/*===== PROJECTS ===============================================*/
+
+#projects {
+  background-color: var(--secundary-color);
+}
+
+#projects header {
+  margin-bottom: 6rem;
+}
+
+#projects header h2 {
+  margin-bottom: 1.6rem;
+}
+
+#projects header p {
+  max-width: 60rem;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+#projects header p a {
+  color: var(--paragraph);
+  font-weight: bold;
+  font-style: italic;
+}
+
+#projects header p + a {
+  padding: 0.8rem 2rem;
+  color: var(--paragraph);
+
+  background-color: var(--third-color);
+  border-radius: 0.8rem;
+
+  display: inline-flex;
+  justify-content: center;
+  gap: 1rem;
+
+  transition: 300ms;
+}
+
+#projects header a svg path:nth-child(2) {
+  fill: var(--headline);
+}
+
+#projects header a:hover {
+  filter: brightness(0.7);
+}
+
+#projects .cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3.2rem;
+}
+
+#projects .card {
+  padding: 4rem;
+  background: var(--section2);
+
+  border-radius: 0.6rem;
+  box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+
+  transition: 400ms;
+}
+
+#projects .card:hover {
+  background: var(--third-color);
+}
+
+#projects .card .img-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+#projects .card img {
+  width: 100%;
+  height: 28rem;
+  object-fit: cover;
+  border-radius: 0.9rem;
+
+  transition: 300ms;
+}
+
+#projects .card:hover > .img-wrapper img {
+  filter: opacity(0.5);
+}
+
+#projects .card .buttons {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  transition: 400ms;
+}
+
+#projects .card:hover > .img-wrapper .buttons {
+  visibility: visible;
+  opacity: 1;
+}
+
+#projects .card .buttons a svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+#projects .card .buttons a svg path:nth-child(2) {
+  fill: #000;
+  transition: 200ms;
+}
+
+#projects .card .buttons a:hover svg path:nth-child(2) {
+  fill: #fff;
+}
+
+#projects .card .buttons a {
+  background: #fff;
+  border-radius: 50%;
+
+  width: 6rem;
+  height: 6rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 500ms;
+}
+
+#projects .card .buttons a:hover {
+  background-color: #000;
+  cursor: pointer;
+}
+
+#projects .card .buttons a:hover > svg {
+  fill: #fff;
+}
+
+#projects .card:nth-child(8) svg path:nth-child(2) {
+  fill: var(--paragraph);
+}
+
+#projects .button {
+  margin: 6rem auto 0;
+}
+
+/* =========================================
+   BOTÕES DENTRO DO CARD (Se houver)
+   ========================================= */
+.buttons {
+  display: flex;
+  gap: 10px;
+  size: 3rem;
+}
