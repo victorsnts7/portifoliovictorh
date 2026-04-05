@@ -1540,7 +1540,7 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   section p,
   section span,
   footer p {
-    font-size: 1.3rem;
+    font-size: 1.9rem;
   }
 
   nav#navigation button svg {
@@ -1647,7 +1647,7 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   section p,
   section span,
   footer p {
-    font-size: 1.1rem;
+    font-size: 1.7rem;
   }
   .social-links {
     gap: 1.5rem;
@@ -1669,7 +1669,7 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   }
 
   #home h1 {
-    font-size: 2.9rem;
+    font-size: 4.9rem;
   }
   #home p {
     font-size: 1.2rem;
@@ -1681,6 +1681,7 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
   }
   #home .line {
     white-space: initial;
+    font-size: 1.5rem;
   }
   @keyframes typing {
     from {
