@@ -854,6 +854,42 @@
             </aside>
         </article>
     </div>
-</body>
 
+    <script>
+      const nav = document.getElementById("navigation");
+      const menuToggleBtns = document.querySelectorAll(
+        ".open-menu, .close-menu",
+      );
+      const menuLinks = document.querySelectorAll(".menu a");
+
+      function isMobile() {
+        return window.innerWidth <= 1024;
+      }
+
+      function toggleMenu() {
+        document.body.classList.toggle("menu-expanded");
+      }
+
+      menuToggleBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (isMobile()) toggleMenu();
+        });
+      });
+
+      menuLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (isMobile()) document.body.classList.remove("menu-expanded");
+        });
+      });
+
+      function showNavOnScroll() {
+        nav.classList.toggle("scroll", window.scrollY > 0);
+      }
+
+      window.addEventListener("scroll", showNavOnScroll);
+      window.addEventListener("load", showNavOnScroll);
+      showNavOnScroll();
+    </script>
+
+</body>
 </html>
