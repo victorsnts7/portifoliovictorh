@@ -322,3 +322,84 @@ body nav#navigation .social-links li:nth-child(3) svg:hover path:nth-child(2) {
 #navigation.scroll button.open-menu path[stroke*="#00856F"] {
   stroke: var(--info-color);
 }
+
+/*===== NAVIGATION ===================================*/
+
+nav {
+  width: 100vw;
+  height: var(--nav-height);
+
+  display: flex;
+
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+nav .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+nav.scroll {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+}
+
+/* LOGO */
+
+a.logoclose {
+  font-family: "Gemunu Libre", sans-serif;
+  font-size: 3rem;
+}
+
+nav#navigation {
+  color: var(--warning-color);
+}
+
+nav#navigation.scroll {
+  color: var(--warning-color);
+}
+
+body.light-mode nav#navigation a.logoclose,
+body.light-mode footer a.logoclose {
+  font-weight: bold;
+  color: var(--black);
+}
+
+body.menu-expanded nav#navigation a.logoclose {
+  opacity: 1;
+}
+
+body.light-mode nav#navigation a.logoclose {
+  filter: brightness(0.8);
+}
+
+body.light-mode footer a.logoclose,
+body.light-mode nav#navigation.scroll a.logoclose {
+  color: var(--black);
+}
+
+/* == == */
+
+nav#navigation .menu ul li a {
+  color: var(--white);
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+nav .menu,
+nav .close-menu {
+  position: fixed;
+}
+
+nav .logoclose {
+  color: var(--white);
+}
