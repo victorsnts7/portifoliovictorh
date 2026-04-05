@@ -1525,3 +1525,109 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
     justify-content: flex-end;
   }
 }
+
+/* ===== TABLET (768px) ===== */
+@media (max-width: 768px) {
+  section h4 {
+    font-size: 1.2rem;
+  }
+  body section h2 {
+    font-size: 2.2rem;
+  }
+  section h3 {
+    font-size: 1.4rem;
+  }
+  section p,
+  section span,
+  footer p {
+    font-size: 1.3rem;
+  }
+
+  nav#navigation button svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  nav#navigation .menu ul li a {
+    color: white;
+    font-size: 3.5rem;
+  }
+
+  body.menu-expanded nav#navigation .logoclose {
+    color: var(--white);
+    font-size: 4rem;
+  }
+
+  body.menu-expanded .menu ul:nth-child(1) {
+    font-size: 1.4rem;
+    gap: 2rem;
+    margin: 6rem 0 7rem;
+  }
+  body.menu-expanded .menu .social-links svg,
+  footer svg {
+    width: 2rem;
+    height: 2rem;
+  }
+  body.menu-expanded .menu .social-links li:nth-child(2) svg,
+  footer .social-links li:nth-child(2) svg {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+
+  #home h1 {
+    font-size: 3.8rem;
+  }
+  #home p {
+    font-size: 1.6rem;
+  }
+  #home .wrapper::before {
+    bottom: -2rem;
+  }
+  #home .wrapper::before {
+    width: 24rem;
+    height: 24rem;
+    bottom: -0.5rem;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 23.5rem;
+    }
+  }
+
+  #about .content a:nth-child(2) {
+    font-size: 1.4rem;
+  }
+
+  #projects .card {
+    padding: 2.5rem;
+  }
+  #projects .card img {
+    height: 15rem;
+  }
+  #projects .card .buttons a {
+    width: 5rem;
+    height: 5rem;
+  }
+  #projects .card .buttons a svg {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  #contact ul a {
+    font-size: 1.3rem;
+  }
+  #contact .col-b img {
+    width: 10rem;
+  }
+  #contact .col-b::after {
+    width: 10rem;
+    height: 3rem;
+  }
+
+  footer a.logoclose {
+        color: var(--white);
+  }
+}
