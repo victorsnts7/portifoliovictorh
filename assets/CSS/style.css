@@ -955,3 +955,51 @@ body.light-mode #about .text-about {
   gap: 10px;
   size: 3rem;
 }
+
+/*===== KNOWLEDGE ===============================================*/
+
+#knowledge header h2 {
+  margin-bottom: 6rem;
+}
+
+#knowledge {
+  background-color: var(--section2);
+}
+
+body.light-mode #knowledge {
+  background-color: var(--cinza);
+}
+
+body.light-mode #knowledge .card {
+  background-color: var(--section2);
+}
+
+#knowledge .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+#knowledge .card {
+  padding: 2.8rem;
+  text-align: left;
+
+  background: var(--secundary-color);
+
+  border-radius: 0.6rem;
+  box-shadow: -1rem 1rem 1rem rgba(0, 0, 0, 0.267);
+
+  transition: 400ms;
+}
+
+#knowledge .card:hover {
+  background: var(--third-color);
+}
+
+#knowledge .card h3 {
+  margin-block: 1.6rem;
+}
+
+#knowledge .card img {
+  width: 10rem;
+}
