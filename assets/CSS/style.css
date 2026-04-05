@@ -743,3 +743,48 @@ body.light-mode #home img#notebook-2-white {
     opacity: 1;
   }
 }
+
+/*===== ABOUT =================================================*/
+
+#about {
+  text-align: left;
+}
+
+#about {
+  background-color: var(--section2);
+}
+
+body.light-mode #about {
+  background-color: var(--cinza);
+}
+
+body.light-mode #about .text-about {
+  color: var(--black);
+}
+
+#about .content p {
+  margin-block: 2.4rem;
+}
+
+#about .content a {
+  text-decoration: none;
+  color: var(--paragraph);
+  font-weight: bold;
+}
+
+#about .col-a {
+  margin-bottom: 6rem;
+}
+
+#about .col-b {
+  text-align: left;
+}
+
+#about img {
+  width: 38rem;
+
+  border-radius: 2rem;
+  box-shadow: 0 0 2rem black;
+
+  transition: 600ms;
+}
