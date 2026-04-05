@@ -303,3 +303,22 @@ body .social-links li:nth-child(3) svg:hover path:nth-child(2),
 body nav#navigation .social-links li:nth-child(3) svg:hover path:nth-child(2) {
   fill: #0a66c2;
 }
+
+/* == == */
+
+#projects .card circle {
+  fill: var(--secundary-color);
+}
+
+#backToTopButton circle {
+  fill: var(--warning-color);
+}
+
+#contact li path,
+#navigation button.open-menu path[stroke*="#00856F"] {
+  stroke: var(--warning-color);
+}
+
+#navigation.scroll button.open-menu path[stroke*="#00856F"] {
+  stroke: var(--info-color);
+}
