@@ -28,7 +28,569 @@
         href="https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet" />
 
-        
+     <style>
+      /* =============================================== */
+      /* VARIÁVEIS E CONFIGURAÇÕES GLOBAIS              */
+      /* =============================================== */
+      :root {
+        --bg: #0b0b0b;
+        --card-bg: #0f0f0f;
+        --primary: #ffffff;
+        --muted: #bdbdbd;
+        --line: rgba(255, 255, 255, 0.06);
+        --glass: rgba(255, 255, 255, 0.03);
+        --radius: 16px;
+        --container-width: 1100px;
+        --max-content-width: 960px;
+        --gap: 24px;
+        --shadow: 0 8px 26px rgba(0, 0, 0, 0.5);
+        --transition: all 0.3s ease;
+        --nav-height: 7.2rem;
+        --primary-color: #ffffff;
+
+        --warning: #f5b83d;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background: var(--bg);
+        color: var(--primary);
+        min-height: 100vh;
+        padding: calc(var(--nav-height) + 24px) 16px 48px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      /* =============================================== */
+      /* NAV                                            */
+      /* =============================================== */
+
+      nav {
+        width: 100vw;
+        height: var(--nav-height);
+        display: flex;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        transition: background 300ms;
+      }
+
+      nav .wrapper {
+        width: 100%;
+        max-width: var(--container-width);
+        margin: 0 auto;
+        padding: 0 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      nav.scroll {
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(1rem);
+        -webkit-backdrop-filter: blur(1rem);
+      }
+
+      /* LOGO */
+      a.logo {
+        font-family: "Gemunu Libre", sans-serif;
+        font-size: 3rem;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.9;
+        position: relative;
+        z-index: 100;
+      }
+
+      nav button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* BOTÃO ABRIR */
+      .open-menu {
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        z-index: 100;
+        transition:
+          opacity 300ms,
+          visibility 300ms;
+      }
+
+      body.menu-expanded .open-menu {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      /* BOTÃO FECHAR */
+      .close-menu {
+        position: fixed;
+        top: 2rem;
+        right: 2rem;
+        z-index: 200;
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opacity 300ms,
+          visibility 300ms;
+      }
+
+      body.menu-expanded .close-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      /* MENU */
+      .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 95;
+
+        background: rgba(10, 10, 10, 0.97);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          transform 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+          opacity 300ms,
+          visibility 300ms;
+      }
+
+      body.menu-expanded .menu {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      body.menu-expanded {
+        overflow: hidden;
+      }
+
+      /* LINKS DO MENU */
+      .menu ul:nth-child(1) {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .menu ul:nth-child(1) li a {
+        font-size: 2.4rem;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        opacity: 0.7;
+        transition: opacity 200ms;
+      }
+
+      .menu ul:nth-child(1) li a:hover {
+        opacity: 1;
+      }
+
+      /* SOCIAL LINKS */
+      .social-links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2.5rem;
+        list-style: none;
+        padding: 0;
+      }
+
+      .social-links li {
+        height: 3rem;
+      }
+
+      .social-links svg {
+        margin-top: 0.3rem;
+        transition: 300ms;
+      }
+
+      .social-links svg:hover {
+        margin-top: 0;
+        margin-bottom: 0.3rem;
+      }
+
+      /* HOME */
+
+      h6 {
+        margin: 5px 0px;
+        font-size: 12px;
+        color: #ffffff;
+        font-family: "poppins", sans-serif;
+      }
+
+      /* ------ */
+
+      .w3-text-teal, .w3-hover-text-teal:hover {
+        color: var(--warning) !important;
+      }
+
+      .w3-teal, .w3-hover-teal:hover {
+        color: #fff !important;
+        background-color: var(--warning) !important;
+      }
+
+      /* ===== DESKTOP (1024px+) ===== */
+      @media (min-width: 1024px) {
+        .open-menu,
+        .close-menu {
+          display: none;
+        }
+
+        .menu {
+          position: static;
+          width: auto;
+          height: auto;
+          background: none;
+          backdrop-filter: none;
+          -webkit-backdrop-filter: none;
+          flex-direction: row;
+          justify-content: flex-end;
+          align-items: center;
+          gap: 4rem;
+          transform: none;
+          opacity: 1;
+          visibility: visible;
+          flex-grow: 1;
+        }
+
+        .menu ul:nth-child(1) {
+          flex-direction: row;
+          gap: 0.5rem;
+        }
+
+        .menu ul:nth-child(1) li a {
+          font-size: 1.6rem;
+          font-weight: 500;
+          opacity: 0.7;
+          padding: 0.6rem 1rem;
+          transition:
+            opacity 200ms,
+            background 200ms;
+        }
+
+        .menu ul:nth-child(1) li a:hover {
+          opacity: 1;
+          color: var(--warning);
+          border-bottom: #f5b83d 1px solid;
+        }
+
+        .social-links {
+          flex-shrink: 0;
+        }
+
+        nav {
+          height: var(--nav-height); /* garante altura fixa */
+        }
+
+        nav .wrapper {
+          max-width: 1200px; /* ✅ aumenta a largura máxima */
+        }
+
+        .menu ul:nth-child(1) li a {
+          font-size: 1.4rem; /* ✅ reduz um pouco o texto */
+          white-space: nowrap; /* ✅ impede quebra de linha */
+          padding: 0.4rem 0.8rem;
+        }
+
+        a.logo {
+          white-space: nowrap; /* ✅ impede "Victor" e "Henrique" quebrarem */
+          font-size: 2.5rem;
+        }
+      }
+
+      /* =============================================== */
+      /* LAYOUT CV                                      */
+      /* =============================================== */
+
+      .resume-wrap {
+        width: 100%;
+        max-width: var(--container-width);
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .resume-card {
+        width: 100%;
+        max-width: var(--max-content-width);
+        background: var(--card-bg);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 40px;
+        border: 1px solid var(--line);
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 32px;
+      }
+
+      @media (max-width: 768px) {
+        .resume-card {
+          grid-template-columns: 1fr;
+          padding: 24px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .resume-card {
+          padding: 16px;
+        }
+      }
+
+      /* =============================================== */
+      /* COMPONENTES CV                                 */
+      /* =============================================== */
+
+      .header {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .avatar {
+        width: 100px;
+        height: 100px;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        flex-shrink: 0;
+      }
+
+      .avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: inherit;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .avatar img:hover {
+        transform: scale(1.1);
+      }
+
+      .name-block h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      .name-block p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+        color: var(--warning);
+      }
+
+      .summary {
+        margin-top: 20px;
+        margin-bottom: 30px;
+        color: var(--muted);
+        line-height: 1.6;
+        font-size: 15px;
+      }
+
+      .section {
+        margin-bottom: 24px;
+      }
+
+      .section h3 {
+        margin: 0 0 12px;
+        font-size: 18px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+        color: var(--warning);
+      }
+
+      .job {
+        margin-bottom: 18px;
+        padding-bottom: 14px;
+        border-bottom: 1px solid var(--line);;
+      }
+
+      .content_job {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+      }
+
+      .job:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      .job h4 {
+        margin: 0;
+        font-size: 16px;
+      }
+
+      .job .meta {
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .job p {
+        margin: 8px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .edu strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .edu .meta {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .side {
+        padding: 22px;
+        height: fit-content;
+        border-radius: 14px;
+        background: linear-gradient(180deg, transparent, var(--glass));
+        border: 1px solid var(--line);
+      }
+
+      .side .section .meta {
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .contact{
+        text-align: center;
+      }
+
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill {
+        padding: 7px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        border: 1px solid var(--line);
+        text-decoration: none;
+        color: inherit;
+        transition: var(--transition);
+      }
+
+      .skill:hover {
+        background: var(--primary);
+        color: var(--bg);
+        transform: scale(1.05);
+      }
+
+      .divider {
+        height: 1px;
+        background: var(--line);
+        margin: 16px 0;
+        border-radius: 6px;
+      }
+
+      .formacao ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .formacao li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 8px 12px;
+        border-radius: 10px;
+        margin-bottom: 8px;
+        transition: background 0.3s ease;
+      }
+
+      .formacao li:hover {
+        background: rgba(255, 255, 255, 0.12);
+      }
+
+      .formacao span {
+        font-size: 0.95rem;
+      }
+
+      .formacao img {
+        width: 22px;
+        height: 22px;
+        transition: transform 0.2s ease;
+        filter: grayscale(100%);
+      }
+
+      .formacao a:hover img {
+        transform: scale(1.15);
+        filter: grayscale(0%);
+      }
+
+      .formacao .breve {
+        text-align: center;
+        color: #bbb;
+        font-style: italic;
+        background: transparent;
+      }
+
+      /* BOTÕES DOWNLOAD */
+      .btn-download,
+      .btn-download2 {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: 0.2s;
+        text-align: center;
+        color: black;
+      }
+
+      .btn-download {
+        background: #3c4e43;
+      }
+      .btn-download2 {
+        background: var(--warning);
+      }
+      .btn-download:hover {
+        background: #959595;
+      }
+      .btn-download2:hover {
+        background: hwb(0 66% 34%);
+      }
+    </style>   
 </head>
 
 <body>
