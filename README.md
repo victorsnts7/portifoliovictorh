@@ -2,6 +2,12 @@
 
 > Portfólio pessoal desenvolvido para apresentar projetos, competências e a evolução profissional de Victor Henrique na área de tecnologia.
 
+<p align="center">
+  <a href="https://portifoliovictorhenrique-irfflj8ds-victorfxp7s-projects.vercel.app/#about" target="_blank">
+    <img src="https://img.shields.io/badge/🚀%20Acessar%20Projeto-22c55e?style=for-the-badge">
+  </a>
+</p>
+
 ---
 
 ## 🚀 Sobre o projeto
