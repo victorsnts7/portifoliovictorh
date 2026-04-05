@@ -1631,3 +1631,96 @@ footer .social-links li:nth-child(4) svg path:nth-child(2) {
         color: var(--white);
   }
 }
+
+/* ===== MOBILE (480px) ===== */
+@media (max-width: 480px) {
+  .wrapper {
+    padding-inline: 2rem;
+  }
+
+  body section h2 {
+    font-size: 2rem;
+  }
+  section h3 {
+    font-size: 1.2rem;
+  }
+  section p,
+  section span,
+  footer p {
+    font-size: 1.1rem;
+  }
+  .social-links {
+    gap: 1.5rem;
+    
+  }
+
+  nav#navigation .menu ul li a {
+    color: white;
+    font-size: 3rem;
+  }
+
+  nav#navigation a.logoclose,
+  footer a.logoclose {
+    font-size: 2.5rem;
+  }
+
+  body.light-mode.menu-expanded nav#navigation a.logoclose {
+    color: var(--white);
+  }
+
+  #home h1 {
+    font-size: 2.9rem;
+  }
+  #home p {
+    font-size: 1.2rem;
+  }
+  #home .wrapper::before {
+    width: 15rem;
+    height: 15rem;
+    bottom: 3.5rem;
+  }
+  #home .line {
+    white-space: initial;
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 18rem;
+    }
+  }
+
+  #projects .card {
+    padding: 1.8rem;
+  }
+  #projects .card .buttons {
+    flex-direction: column;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, -50%);
+  }
+  #projects .card .buttons a {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  #contact ul a {
+    font-size: 1.1rem;
+  }
+  #contact svg {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+  #contact .col-b img {
+    width: 9rem;
+  }
+  #contact .col-b::after {
+    width: 9rem;
+    height: 2rem;
+  }
+
+  footer a.logoclose {
+  color: var(--white);
+}
+}
