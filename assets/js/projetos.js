@@ -45,9 +45,9 @@ function projetos(section) {
       </div>
 
       <div class="card">
-        <h3>7 Days Of Code</h3>
+        <h3>Clima Inteligente</h3>
         <div class="img-wrapper">
-              <img src="assets/images/project2.png" alt="Versão depois do desafio" />
+              <img src="assets/images/Climainteligente.png" alt="Imagem do projeto Clima Inteligente" />
           <div class="buttons">
             
             <a 
@@ -74,18 +74,15 @@ function projetos(section) {
             </a>
           </div>
         </div>
-        <p>Desafio de 7 dias para criação de um projeto.</p>
-        <p class="languages">HTML - CSS</p>
+        <p>Projeto de site de previsão do tempo com integração de API climática e uso de IA para exibição de dados e insights.</p>
+        <p class="languages">HTML - CSS - JS</p>
         <h3> EM BREVE </h3>
-        <p class="desafios_link">
-            Por <a href="https://www.alura.com.br/" target="_blank"><strong>Alura</strong></a>
-          </p>
       </div>
 
       <div class="card">
         <h3>7 Days Of Code</h3>
         <div class="img-wrapper">
-          <img src="assets/images/project3.png" alt="Imagem do projeto" />
+          <img src="assets/images/project3.jpg" alt="Imagem do projeto" />
           
           
           <div class="buttons">
